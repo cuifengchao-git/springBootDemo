@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    logback是什么:
+        log4j、logback是目前比较流行的日志框架，其作者是同一个人;
+        slf4j(Simple Logging Facade for Java)是一个日志门面框架，提供了日志系统中常用的接口。logback 和 log4j 则对slf4j 进行了实现。
+    logback好处:
+        logback是log4j框架作者开发的新一代日志框架，它效率更高，更能适用诸多的运行环境，同时天然的支持slf4j。
+        logback定制性更加灵活，同时也是springboot的内置日志框架。
+    为什么不使用System.out输出日志:
+        System.out性能太低，原因是因为System.out输出会导致线程等待(同步)。
+        Logger输出线程不等待日志输出(异步),而继续执行。
+    Logger的使用:
+        springboot推荐的日志类库是slf4j、日志框架为logback;
+        slf4j有个接口叫Logger,提供了丰富的日志输出方法，它包含了所有日志级别的输出。
+        用slf4j的工厂类(LoggerFactory.getLogger(TestController.class))获取一个logger ，然后就可以输出日志了，默认情况下，日志只会输出到控制台。
+
+    日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出
+    scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true
+    scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
+    debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
+-->
+<configuration sacn="true" scanPeriod="10 seconds">
+
+    <!--
+        <contextName>:设置上下文名称
+        每个logger都关联到logger上下文,默认上下文名称为“default”;
+        可以使用<contextName>设置成其他名字，用于区分不同应用程序的记录;
+    -->
+    <contextName>springBootLogback</contextName>
+
+    <!--
+        <property>:定义变量。通过定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。
+        name的值是变量的名称；
+        value的值时变量定义的值；
+
+    -->
+    <property name="LOG_HOME" value="C:/Workspace_Other_Java/springBootDemoLog"/>
+    <property name="maxHistory" value="30"/>
+    <!-- 彩色日志 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+    <property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+
+    <!--
+        <appender>:<configuration>的子节点,是负责写日志的组件;
+        <appender>有两个必要属性name和class:
+            ==> name指定appender名称;
+            ==> class指定appender的全限定名;
+                ==> ConsoleAppender:把日志添加到控制台;
+                ==> FileAppender:把日志添加到文件;
+                ==> RollingFileAppender:滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件;
+                    ==> TimeBasedRollingPolicy:根据时间来制定滚动策略;
+                        ==> SizeAndTimeBasedRollingPolicy:希望按日期归档文件，但同时限制每个日志文件的大小
+                    ==> FixedWindowRollingPolicy:根据固定窗口算法重命名文件的滚动策略;
+                    ==> SizeBasedTriggeringPolicy:查看当前活动文件的大小，如果超过指定大小会告知 RollingFileAppender 触发当前活动文件滚动。
+            ==> <encoder>:对日志进行格式化;
+                ==> <pattern>:定义输出日志的格式;
+                    ==> %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-%msg%n
+                        日期                         日志的线程  日志级别  日志输出的类名-日志输出内容换行符
+            ==> <file>:被写入的文件名，可以是相对目录，也可以是绝对目录，如果上级目录不存在会自动创建，没有默认值;
+            ==> <append>:如果是 true，日志被追加到文件结尾，如果是 false，清空现存文件，默认是true;
+            ==> <rollingPolicy>:当发生滚动时,决定 RollingFileAppender 的行为，涉及文件移动和重命名;
+                ==> <fileNamePattern>:必要节点,归档时的文件目录;
+                ==> <maxHistory>:控制保留的归档文件的最大数量，超出数量就删除旧文件;
+                ==> <maxFileSize>:这是活动文件的大小，默认值是10MB。超过该项指定的大小，日志则滚动;
+            ==> <filter>:过滤器，执行一个过滤器会有返回个枚举值。即DENY，NEUTRAL，ACCEPT其中之一;
+                ==> DENY:日志将立即被抛弃不再经过其他过滤器;
+                ==> NEUTRAL:有序列表里的下个过滤器过接着处理日志;
+                ==> ACCEPT:日志会被立即处理，不再经过剩余过滤器;
+                ==> LevelFilter:级别过滤器,根据日志级别进行过滤。如果日志级别等于配置级别，过滤器会根据onMath 和 onMismatch接收或拒绝日志。有以下子节点。
+                    ==> <level>:设置过滤级别;
+                    ==> <onMatch>:用于配置符合过滤条件的操作;
+                    ==> <onMismatch>:用于配置不符合过滤条件的操作;
+                ==> ThresholdFilter:临界值过滤器，过滤掉低于指定临界值的日志。日志级别等于或高于临界值时，过滤器返回NEUTRAL；当日志级别低于临界值时，日志会被拒绝。
+
+    -->
+    <!-- 控制台输出日志 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+    </appender>
+    <!-- DEBUG级别日志 -->
+    <appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}\log_debug.log</file>
+        <!--日志文件输出格式-->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-%msg%n</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/%d{yyyyMMdd}/log-debug-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!--日志文件保留天数-->
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <!-- 此日志文件只记录debug级别的 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>debug</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <!-- INFO级别日志 -->
+    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}\log_info.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-%msg%n</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/%d{yyyyMMdd}/log-info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>info</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <!-- WARN级别日志 -->
+    <appender name="WARN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}\log_warn.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-%msg%n</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/%d{yyyyMMdd}/log-warn-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>warn</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <!-- ERROR级别日志 -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}\log_error.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-%msg%n</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/%d{yyyyMMdd}/log-error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${maxHistory}</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>error</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!--
+        多环境日志输出
+        <logger>
+            ==> name:项目中对应的包路径。
+            ==> appender-ref:是appender的引用。
+        <root>:根节点,引用了控制台日志输出配置。
+     -->
+    <springProfile name="dev">
+        <logger name="com.example.demo" level="debug"/>
+    </springProfile>
+    <root level="debug">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="DEBUG_FILE" />
+        <appender-ref ref="INFO_FILE" />
+        <appender-ref ref="ERROR_FILE" />
+        <appender-ref ref="WARN_FILE" />
+    </root>
+
+</configuration>

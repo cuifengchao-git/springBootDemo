@@ -1,0 +1,43 @@
+2021-11-18 12:34:10.447 [main] DEBUG com.example.demo.SpringBootDemoApplication-Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-18 12:34:11.553 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	c.e.d.t.TestController:
+	{ [/test]}: test()
+2021-11-18 12:34:11.555 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-11-18 12:34:11.571 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'beanNameHandlerMapping' {}
+2021-11-18 12:34:11.585 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [], /**=ResourceHttpRequestHandler [ServletContext [/]]}
+2021-11-18 12:36:02.231 [main] DEBUG com.example.demo.SpringBootDemoApplication-Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-18 12:36:03.540 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	c.e.d.t.TestController:
+	{ [/test]}: test(HttpServletRequest,HttpServletResponse)
+2021-11-18 12:36:03.545 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-11-18 12:36:03.561 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'beanNameHandlerMapping' {}
+2021-11-18 12:36:03.577 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [], /**=ResourceHttpRequestHandler [ServletContext [/]]}
+2021-11-18 12:36:22.834 [main] DEBUG com.example.demo.SpringBootDemoApplication-Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-18 12:36:24.142 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	c.e.d.t.TestController:
+	{ [/test]}: test()
+2021-11-18 12:36:24.144 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-11-18 12:36:24.163 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'beanNameHandlerMapping' {}
+2021-11-18 12:36:24.180 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [], /**=ResourceHttpRequestHandler [ServletContext [/]]}
+2021-11-18 12:36:56.927 [main] DEBUG com.example.demo.SpringBootDemoApplication-Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-11-18 12:36:58.230 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	c.e.d.t.TestController:
+	{ [/test]}: test()
+2021-11-18 12:36:58.232 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-11-18 12:36:58.250 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'beanNameHandlerMapping' {}
+2021-11-18 12:36:58.267 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings-'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [], /**=ResourceHttpRequestHandler [ServletContext [/]]}
+2021-11-18 12:39:33.557 [http-nio-8080-exec-1] DEBUG com.example.demo.test.TestController-TestController:test-首次输出！！
+2021-11-18 12:39:41.311 [http-nio-8080-exec-3] DEBUG com.example.demo.test.TestController-TestController:test-首次输出！！
+2021-11-18 12:39:47.797 [http-nio-8080-exec-4] DEBUG com.example.demo.test.TestController-TestController:test-首次输出！！

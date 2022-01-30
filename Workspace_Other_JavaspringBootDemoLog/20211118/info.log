@@ -1,0 +1,47 @@
+2021-11-18 12:34:10.444 [main] INFO  com.example.demo.SpringBootDemoApplication-Starting SpringBootDemoApplication using Java 1.8.0_131 on DESKTOP-SPMRH8C with PID 16764 (C:\Workspace_Other_Java\springBootDemo\build\classes\java\main started by cui in C:\Workspace_Other_Java\springBootDemo)
+2021-11-18 12:34:10.448 [main] INFO  com.example.demo.SpringBootDemoApplication-No active profile set, falling back to default profiles: default
+2021-11-18 12:34:11.232 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+2021-11-18 12:34:11.240 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:34:11.241 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2021-11-18 12:34:11.250 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-18 12:34:11.337 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2021-11-18 12:34:11.337 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 850 ms
+2021-11-18 12:34:11.648 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:34:11.664 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-18 12:34:11.673 [main] INFO  com.example.demo.SpringBootDemoApplication-Started SpringBootDemoApplication in 1.68 seconds (JVM running for 2.494)
+2021-11-18 12:36:02.227 [main] INFO  com.example.demo.SpringBootDemoApplication-Starting SpringBootDemoApplication using Java 1.8.0_131 on DESKTOP-SPMRH8C with PID 2200 (C:\Workspace_Other_Java\springBootDemo\build\classes\java\main started by cui in C:\Workspace_Other_Java\springBootDemo)
+2021-11-18 12:36:02.231 [main] INFO  com.example.demo.SpringBootDemoApplication-No active profile set, falling back to default profiles: default
+2021-11-18 12:36:03.185 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+2021-11-18 12:36:03.196 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:36:03.196 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2021-11-18 12:36:03.196 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-18 12:36:03.284 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2021-11-18 12:36:03.285 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1007 ms
+2021-11-18 12:36:03.641 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:36:03.659 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-18 12:36:03.668 [main] INFO  com.example.demo.SpringBootDemoApplication-Started SpringBootDemoApplication in 1.983 seconds (JVM running for 2.996)
+2021-11-18 12:36:22.831 [main] INFO  com.example.demo.SpringBootDemoApplication-Starting SpringBootDemoApplication using Java 1.8.0_131 on DESKTOP-SPMRH8C with PID 14656 (C:\Workspace_Other_Java\springBootDemo\build\classes\java\main started by cui in C:\Workspace_Other_Java\springBootDemo)
+2021-11-18 12:36:22.835 [main] INFO  com.example.demo.SpringBootDemoApplication-No active profile set, falling back to default profiles: default
+2021-11-18 12:36:23.784 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+2021-11-18 12:36:23.795 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:36:23.795 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2021-11-18 12:36:23.795 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-18 12:36:23.885 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2021-11-18 12:36:23.885 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 999 ms
+2021-11-18 12:36:24.243 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:36:24.260 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-18 12:36:24.270 [main] INFO  com.example.demo.SpringBootDemoApplication-Started SpringBootDemoApplication in 1.981 seconds (JVM running for 2.935)
+2021-11-18 12:36:56.923 [main] INFO  com.example.demo.SpringBootDemoApplication-Starting SpringBootDemoApplication using Java 1.8.0_131 on DESKTOP-SPMRH8C with PID 16132 (C:\Workspace_Other_Java\springBootDemo\build\classes\java\main started by cui in C:\Workspace_Other_Java\springBootDemo)
+2021-11-18 12:36:56.927 [main] INFO  com.example.demo.SpringBootDemoApplication-No active profile set, falling back to default profiles: default
+2021-11-18 12:36:57.872 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+2021-11-18 12:36:57.884 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:36:57.885 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2021-11-18 12:36:57.885 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-18 12:36:57.974 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2021-11-18 12:36:57.974 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 997 ms
+2021-11-18 12:36:58.330 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2021-11-18 12:36:58.351 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-18 12:36:58.362 [main] INFO  com.example.demo.SpringBootDemoApplication-Started SpringBootDemoApplication in 1.966 seconds (JVM running for 2.982)
+2021-11-18 12:39:33.527 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-18 12:39:33.527 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2021-11-18 12:39:33.527 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 0 ms
